@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>温超东 - 个人主页</title>
+<style>
+  :root {
+    --blue: #1f3b6e;
+    --link: #2b6cb0;
+    --gray: #555;
+    --line: #d7e0ee;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Times New Roman", "宋体", SimSun, serif;
+    color: #222;
+    background: #f5f6f8;
+    line-height: 1.75;
+  }
+  .container {
+    max-width: 980px;
+    margin: 24px auto;
+    background: #fff;
+    padding: 40px 48px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.08);
+    border-radius: 4px;
+  }
+  /* ===== 页眉 ===== */
+  .header { display: flex; gap: 32px; align-items: flex-start; }
+  .header img {
+    width: 168px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+  }
+  .header .info h1 {
+    font-family: "黑体", "Microsoft YaHei", sans-serif;
+    font-size: 30px;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+  .header .info p { margin: 3px 0; font-size: 15.5px; }
+  .header .info a { color: var(--link); text-decoration: none; }
+  .header .info a:hover { text-decoration: underline; }
+  .icon { color: var(--blue); margin-right: 6px; }
+  .nav {
+    margin-top: 10px;
+    font-size: 15.5px;
+    font-weight: bold;
+  }
+  .nav a { color: var(--link); text-decoration: none; margin: 0 4px; }
+  .nav a:hover { text-decoration: underline; }
+  /* ===== 节标题 ===== */
+  h2 {
+    font-family: "黑体", "Microsoft YaHei", sans-serif;
+    font-size: 19px;
+    color: var(--blue);
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 5px;
+    margin: 30px 0 12px;
+  }
+  h2 .icon { margin-right: 8px; }
+  /* ===== 内容 ===== */
+  p.intro { text-indent: 2em; text-align: justify; }
+  ul.list { list-style: none; }
+  ul.list > li {
+    padding-left: 22px;
+    position: relative;
+    margin: 7px 0;
+    text-align: justify;
+  }
+  ul.list > li::before {
+    content: "•";
+    color: var(--blue);
+    font-weight: bold;
+    position: absolute;
+    left: 2px;
+  }
+  .date { color: var(--gray); font-weight: bold; margin-right: 10px; }
+  .role { font-weight: bold; }
+  .tag { color: var(--blue); font-weight: bold; }
+  ol.pubs { padding-left: 0; list-style: none; counter-reset: pub; }
+  ol.pubs > li {
+    counter-increment: pub;
+    margin: 8px 0;
+    padding-left: 34px;
+    position: relative;
+    text-align: justify;
+    font-size: 15px;
+  }
+  ol.pubs > li::before {
+    content: "[" counter(pub) "]";
+    color: var(--blue);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  .me { font-weight: bold; }
+  .venue { font-style: italic; }
+  .footer {
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    margin-top: 36px;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  @media (max-width: 640px) {
+    .container { padding: 22px; margin: 0; }
+    .header { flex-direction: column; align-items: center; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===================== 页眉 ===================== -->
+  <div class="header">
+    <img src="photo.jpg" alt="温超东">
+    <div class="info">
+      <h1>温超东</h1>
+      <p><span class="icon">🏛</span>河南师范大学 · 教育技术学 博士</p>
+      <p><span class="icon">🏛</span>教育大数据应用技术国家工程研究中心</p>
+      <p><span class="icon">✉</span><a href="mailto:944359632@qq.com">944359632@qq.com</a>
+         &nbsp;&nbsp;<span class="icon">☎</span>13720151476</p>
+      <p><span class="icon">📍</span>湖北省武汉市洪山区 华中师范大学</p>
+      <div class="nav">
+        ☰ <a href="#intro">个人简介</a> |
+        <a href="#edu">教育背景</a> |
+        <a href="#research">研究方向</a> |
+        <a href="#companion">在研项目</a> |
+        <a href="#projects">科研项目</a> |
+        <a href="#pubs">代表论文</a> |
+        <a href="#recruit">学生培养</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== 个人简介 ===================== -->
+  <h2 id="intro"><span class="icon">❖</span>个人简介</h2>
+  <p class="intro">
+    温超东，华中师范大学教育技术学博士，毕业于教育大数据应用技术国家工程研究中心，具备计算机科学与教育学的交叉学科背景。
+    主要从事<b>学习者情绪识别</b>、<b>学习者情绪原因分析</b>等方向的研究，擅长运用人工智能技术解决教育领域中的学习情感分析与认知计算问题。
+    相关成果发表于 <i>IEEE Transactions on Neural Networks and Learning Systems</i>、<i>Information Fusion</i>、
+    <i>Information Processing &amp; Management</i> 等国际期刊（含 ESI 高被引论文），获授权国家发明专利 1 项。
+  </p>
+  <p class="intro">
+    主持华中师范大学优秀研究生教育创新资助项目 1 项，作为学生第一参与人深度参与国家自然科学基金面上项目、
+    国家科技创新 2030—“新一代人工智能”重大项目子课题，全程参与项目申报、实施与结题工作。
+    担任 <i>Information Processing &amp; Management</i>、<i>Expert Systems</i> 等国际期刊审稿人。
+    曾获华中师范大学“科研之星”（2023、2024）、优秀研究生单项奖学金等荣誉。
+  </p>
+
+  <!-- ===================== 教育背景 ===================== -->
+  <h2 id="edu"><span class="icon">🎓</span>教育背景</h2>
+  <ul class="list">
+    <li><span class="date">2021.09–2025.12</span>华中师范大学，教育技术学，<span class="role">博士</span>（导师：刘智 教授），教育大数据应用技术国家工程研究中心</li>
+    <li><span class="date">2018.09–2021.06</span>湖北大学，计算机技术，<span class="role">硕士</span>（导师：曾诚 教授），计算机与信息工程学院</li>
+    <li><span class="date">2013.09–2017.06</span>湖北汽车工业学院，车辆工程，<span class="role">学士</span>，汽车工程学院</li>
+  </ul>
+
+  <!-- ===================== 研究方向 ===================== -->
+  <h2 id="research"><span class="icon">◎</span>研究方向</h2>
+  <ul class="list">
+    <li><span class="role">学习者情绪识别：</span>面向在线学习场景，融合大语言模型与对比学习等技术，精准识别学习者在讨论、评论等文本中表达的困惑、兴奋、挫败等认知型情绪。</li>
+    <li><span class="role">学习者情绪原因分析：</span>挖掘情绪背后的触发原因，构建“情绪—原因”关联抽取与归因推理模型，回答“学习者为何产生该情绪”这一关键问题，为精准教学干预提供可解释依据。</li>
+  </ul>
+
+  <!-- ===================== 在研项目 ===================== -->
+  <h2 id="companion"><span class="icon">🤖</span>在研项目：个性化多智能体情感学伴</h2>
+  <p class="intro">
+    本项目旨在开发一个<b>“情感学习同伴”</b>智能系统，陪伴学习者完成在线协作学习：
+    在在线同步讨论过程中<b>实时监测学习者的情绪状态</b>，结合讨论上下文<b>自动发现其情绪产生的原因</b>，
+    并基于多智能体协同机制，依据情绪原因为学习者提供<b>个性化的情感支持与干预</b>，从而激发学习动机、改善学习体验。
+  </p>
+
+  <!-- ===================== 科研项目 ===================== -->
+  <h2 id="projects"><span class="icon">▣</span>科研项目</h2>
+  <ul class="list">
+    <li><span class="date">2024.06–2025.05</span>华中师范大学优秀研究生教育创新资助项目：大语言模型增强的在线学习群体情绪感知归因方法及应用研究，<span class="role">主持</span></li>
+    <li><span class="date">2024.01–2027.12</span>国家自然科学基金面上项目：融合情绪感知与归因推理的异步讨论多策略组合干预方法研究，<span class="role">学生第一参与人</span></li>
+    <li><span class="date">2023.03–2026.02</span>国家科技创新 2030—“新一代人工智能”重大项目子课题：基于认知和情感计算模型的学习成效评估与预测，<span class="role">学生第一参与人</span></li>
+    <li><span class="date">2021.01–2024.12</span>国家自然科学基金面上项目：SPOC 互动话语中认知行为模式的识别及其适应性干预方法研究，<span class="role">核心参与</span></li>
+  </ul>
+
+  <!-- ===================== 代表论文 ===================== -->
+  <h2 id="pubs"><span class="icon">✎</span>代表论文</h2>
+  <ol class="pubs">
+    <li>Liu Z, <span class="me">Wen C*</span>, Su Z, et al. Emotion-semantic-aware dual contrastive learning for epistemic emotion identification of learner-generated reviews in MOOCs. <span class="venue">IEEE Transactions on Neural Networks and Learning Systems</span>, 2024, 35(11): 16464–16477. <span class="tag">（中科院一区，IF=8.9，ESI 高被引）</span></li>
+    <li>Liu Z, <span class="me">Wen C*</span>, Li D, et al. Large language model augmented multi-task learning network with inter-clause modeling for emotion-cause pair extraction. <span class="venue">Information Fusion</span>, 2026, 126: 103583. <span class="tag">（中科院一区，IF=15.5）</span></li>
+    <li><span class="me">Wen C</span>, Liu Z, Xu W, et al. LLM-KSC: Large language model-enhanced knowledge-structure complementary network for causal emotion entailment in conversations. <span class="venue">Information Processing &amp; Management</span>. <span class="tag">（中科院一区，在审）</span></li>
+    <li><span class="me">Wen C</span>, Xu W. A Review of Advances in Textual Emotion Cause Analysis. <span class="venue">International Conference on Algorithms and Architectures for Parallel Processing (ICA3PP)</span>, 2026: 327–334. <span class="tag">（CCF C 类会议）</span></li>
+    <li><span class="me">温超东</span>, 曾诚, 任俊伟, 等. 结合 ALBERT 和双向门控循环单元的专利文本分类. <span class="venue">计算机应用</span>, 2021, 41(2): 407–412. <span class="tag">（北大核心）</span></li>
+    <li>曾诚, <span class="me">温超东</span>, 孙瑜敏, 等. 基于 ALBERT-CRNN 的弹幕文本情感分析. <span class="venue">郑州大学学报（理学版）</span>, 2021, 53(3): 1–8. <span class="tag">（北大核心）</span></li>
+    <li>Liu Z, Xiang H, Liang R, et al. Graph Contrastive Learning via Hierarchical Multiview Enhancement for Recommendation. <span class="venue">IEEE Transactions on Industrial Informatics</span>, 2025, 21(3): 2403–2412. <span class="tag">（中科院一区）</span></li>
+    <li>Xu W, Zhu K, Zhou D, et al. Examining the Effects of Habit and Self-Efficacy on Users' Acceptance of a Map-Based Online Learning System via an Extended TAM. <span class="venue">Education Sciences</span>, 2025, 15(7): 828. <span class="tag">（中科院三区）</span></li>
+  </ol>
+
+  <!-- ===================== 发明专利 ===================== -->
+  <h2 id="patents"><span class="icon">⚙</span>发明专利</h2>
+  <ol class="pubs">
+    <li>刘智，<span class="me">温超东</span>，孙建文，刘三女牙，戴志诚，邓磊. 文本情绪原因对抽取方法、系统、电子设备与存储介质. ZL202410110728.3, 2024. <span class="tag">（已授权）</span></li>
+    <li>曾诚，<span class="me">温超东</span>，任俊伟，等. 一种结合 ALBERT 和 BiGRU 的专利文本分类方法. ZL202010497459.2, 2020. <span class="tag">（受理）</span></li>
+    <li>刘智，汪元，孙建文，刘三女牙，向恒京，粟柱，<span class="me">温超东</span>. 一种基于多层次增强对比学习的慕课学习者学习成效预测方法. ZL202410337219.4, 2024. <span class="tag">（受理）</span></li>
+  </ol>
+
+  <!-- ===================== 荣誉奖励 ===================== -->
+  <h2 id="awards"><span class="icon">🏆</span>荣誉奖励</h2>
+  <ul class="list">
+    <li><span class="date">2023 / 2024</span>华中师范大学“科研之星”</li>
+    <li><span class="date">2024</span>华中师范大学二等学业奖学金</li>
+    <li><span class="date">2023</span>华中师范大学优秀研究生单项奖学金</li>
+    <li><span class="date">2021</span>湖北大学优秀毕业研究生</li>
+  </ul>
+
+  <!-- ===================== 学生培养（本科生招生） ===================== -->
+  <h2 id="recruit"><span class="icon">❀</span>学生培养：本科生科研团队招生</h2>
+  <p class="intro"><b>加入团队，你将获得：</b></p>
+  <ul class="list">
+    <li><span class="role">学科竞赛：</span>老师亲自带队参加“挑战杯”“互联网+”等高水平实践创新竞赛，全程指导选题、打磨与路演；</li>
+    <li><span class="role">论文训练：</span>前期即可跟随老师参与学术论文写作，接受从文献调研、实验设计到投稿的完整科研训练，早出成果；</li>
+    <li><span class="role">助力保研：</span>以竞赛获奖与论文成果为依托，提前规划、尽早准备，为推免保研增添核心竞争力；</li>
+    <li><span class="role">项目实战：</span>直接参与“情感学伴”等真实科研项目，动手实践大语言模型、情感计算等前沿人工智能技术。</li>
+  </ul>
+  <p class="intro"><b>我们期待这样的你：</b>对人工智能、教育数据挖掘或情感计算有浓厚兴趣；踏实主动，愿意投入时间学习编程（Python）与科研方法；专业不限，计算机、教育技术及相关专业同学优先，零基础但肯学者同样欢迎。</p>
+  <p class="intro"><b>联系方式：</b>欢迎感兴趣的同学通过邮箱 <a href="mailto:944359632@qq.com">944359632@qq.com</a> 或电话 13720151476 与我联系，期待与你一起探索“读懂学习者情绪”的智能教育未来！</p>
+
+  <div class="footer">© 2026 温超东 · 最近更新：2026 年 9 月</div>
+</div>
+</body>
+</html>
