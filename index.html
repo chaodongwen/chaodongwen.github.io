@@ -1,231 +1,541 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>温超东 - 个人主页</title>
-<style>
-  :root {
-    --blue: #1f3b6e;
-    --link: #2b6cb0;
-    --gray: #555;
-    --line: #d7e0ee;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: "Times New Roman", "宋体", SimSun, serif;
-    color: #222;
-    background: #f5f6f8;
-    line-height: 1.75;
-  }
-  .container {
-    max-width: 980px;
-    margin: 24px auto;
-    background: #fff;
-    padding: 40px 48px;
-    box-shadow: 0 1px 6px rgba(0,0,0,.08);
-    border-radius: 4px;
-  }
-  /* ===== 页眉 ===== */
-  .header { display: flex; gap: 32px; align-items: flex-start; }
-  .header img {
-    width: 168px;
-    border: 1px solid var(--line);
-    border-radius: 3px;
-  }
-  .header .info h1 {
-    font-family: "黑体", "Microsoft YaHei", sans-serif;
-    font-size: 30px;
-    color: var(--blue);
-    margin-bottom: 6px;
-  }
-  .header .info p { margin: 3px 0; font-size: 15.5px; }
-  .header .info a { color: var(--link); text-decoration: none; }
-  .header .info a:hover { text-decoration: underline; }
-  .icon { color: var(--blue); margin-right: 6px; }
-  .nav {
-    margin-top: 10px;
-    font-size: 15.5px;
-    font-weight: bold;
-  }
-  .nav a { color: var(--link); text-decoration: none; margin: 0 4px; }
-  .nav a:hover { text-decoration: underline; }
-  /* ===== 节标题 ===== */
-  h2 {
-    font-family: "黑体", "Microsoft YaHei", sans-serif;
-    font-size: 19px;
-    color: var(--blue);
-    border-bottom: 2px solid var(--line);
-    padding-bottom: 5px;
-    margin: 30px 0 12px;
-  }
-  h2 .icon { margin-right: 8px; }
-  /* ===== 内容 ===== */
-  p.intro { text-indent: 2em; text-align: justify; }
-  ul.list { list-style: none; }
-  ul.list > li {
-    padding-left: 22px;
-    position: relative;
-    margin: 7px 0;
-    text-align: justify;
-  }
-  ul.list > li::before {
-    content: "•";
-    color: var(--blue);
-    font-weight: bold;
-    position: absolute;
-    left: 2px;
-  }
-  .date { color: var(--gray); font-weight: bold; margin-right: 10px; }
-  .role { font-weight: bold; }
-  .tag { color: var(--blue); font-weight: bold; }
-  ol.pubs { padding-left: 0; list-style: none; counter-reset: pub; }
-  ol.pubs > li {
-    counter-increment: pub;
-    margin: 8px 0;
-    padding-left: 34px;
-    position: relative;
-    text-align: justify;
-    font-size: 15px;
-  }
-  ol.pubs > li::before {
-    content: "[" counter(pub) "]";
-    color: var(--blue);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-  }
-  .me { font-weight: bold; }
-  .venue { font-style: italic; }
-  .footer {
-    text-align: center;
-    color: #999;
-    font-size: 13px;
-    margin-top: 36px;
-    border-top: 1px solid var(--line);
-    padding-top: 14px;
-  }
-  @media (max-width: 640px) {
-    .container { padding: 22px; margin: 0; }
-    .header { flex-direction: column; align-items: center; text-align: center; }
-  }
-</style>
-</head>
-<body>
-<div class="container">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="温超东，河南师范大学教育学部讲师，理学博士。主要从事教育数据挖掘与学习者情感计算研究，关注学习者情绪识别、情绪原因分析与个性化情感支持。">
+  <meta name="author" content="温超东">
+  <title>温超东 · 河南师范大学 · 个人主页</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%23172f46'/%3E%3Ctext%20x='32'%20y='44'%20text-anchor='middle'%20font-family='serif'%20font-size='42'%20fill='white'%3E%E6%B8%A9%3C/text%3E%3C/svg%3E">
+  <style>
+:root{
+  --ink:#101923;--text:#202a35;--muted:#00070e;--blue:#214f79;
+  --line:#d6dfe7;--soft:#f1f5f8;--chip:#e7eff6;--white:#fff;
+  --sans:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC","Source Han Sans SC","Heiti SC",SimHei,Arial,sans-serif;
+  --copy-size:1.1111rem;--nav-offset:96px;
+}
+*{box-sizing:border-box}
+html{font-size:112.5%;scroll-behavior:smooth;scroll-padding-top:var(--nav-offset)}
+body{margin:0;background:#fafbfc;color:var(--text);font:400 1rem/1.78 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,p,ul,ol,figure{margin:0}
+a{color:var(--blue);text-decoration:none;text-underline-offset:5px}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:3px solid #397aa9;outline-offset:5px;border-radius:3px}
+strong{font-weight:700;color:var(--ink)}
+::selection{background:#cfe1ef;color:var(--ink)}
+.skip-link{position:fixed;top:-80px;left:18px;padding:8px 18px;background:var(--ink);color:#fff;z-index:10}
+.skip-link:focus{top:14px}
+.page{max-width:1320px;margin:0 auto;padding:0 40px}
 
-  <!-- ===================== 页眉 ===================== -->
-  <div class="header">
-    <img src="photo.jpg" alt="温超东">
-    <div class="info">
-      <h1>温超东</h1>
-      <p><span class="icon">🏛</span>河南师范大学 · 教育技术学 博士</p>
-      <p><span class="icon">🏛</span>教育信息技术学院</p>
-      <p><span class="icon">✉</span><a href="mailto:944359632@qq.com">944359632@qq.com</a>
-         &nbsp;&nbsp;<span class="icon">☎</span>13720151476</p>
-      <p><span class="icon">📍</span>湖北省武汉市洪山区 华中师范大学</p>
-      <div class="nav">
-        ☰ <a href="#intro">个人简介</a> |
-        <a href="#edu">教育背景</a> |
-        <a href="#research">研究方向</a> |
-        <a href="#companion">在研项目</a> |
-        <a href="#projects">科研项目</a> |
-        <a href="#pubs">代表论文</a> |
-        <a href="#recruit">学生培养</a>
-      </div>
+/* 黑体风格的统一字阶，保持原有配色与栏目结构。 */
+.masthead{padding:26px 0 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px}
+.masthead p{font-size:.9444rem;color:var(--muted)}
+.masthead .en{font-size:.8333rem;letter-spacing:.1em}
+.hero{padding:42px 0 34px}
+.kicker{display:inline-block;font-size:.8333rem;font-weight:700;letter-spacing:.08em;color:var(--blue);background:var(--chip);padding:4px 13px;border-radius:999px;margin-bottom:16px}
+.name-line{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap}
+h1{font:700 3rem/1.35 var(--sans);letter-spacing:.04em;color:var(--ink)}
+.roman{font:600 1.2778rem/1.6 var(--sans);color:var(--muted)}
+.appointment{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px;color:var(--ink);font-size:1.1111rem;font-weight:500}
+.appointment .sep{color:#738190;font-weight:400}
+.discipline{font-size:1rem;color:var(--muted);margin-top:8px;line-height:1.8;font-weight:400}
+
+.navigation{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.98);backdrop-filter:blur(4px);border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;gap:27px;padding:0 2px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:#bacbd8 transparent}
+.navigation a{display:block;padding:12px 0 10px;color:var(--muted);border-bottom:3px solid transparent;font-size:.9444rem;line-height:1.7;font-weight:500;white-space:nowrap;flex:none}
+.navigation a:hover,.navigation a[aria-current="location"]{color:var(--blue);border-bottom-color:var(--blue);text-decoration:none}
+.navigation a[aria-current="location"]{font-weight:600}
+
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:44px;padding-top:34px;align-items:start}
+.profile-card{position:static;min-width:0;background:var(--white);border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:8px;padding:20px 22px;box-shadow:0 2px 10px rgba(20,41,62,.035)}
+/* 仅在视口能够完整容纳名片时，由脚本启用吸顶。 */
+.profile-card.is-sticky{position:sticky;top:var(--nav-offset)}
+.profile-card img{width:74%;max-width:180px;height:auto;display:block;margin:0 auto;border-radius:5px;background:var(--soft)}
+.profile-name{font:700 1.3333rem/1.5 var(--sans);color:var(--ink);margin-top:12px;letter-spacing:.04em;text-align:center}
+.profile-title{font-size:.9444rem;color:var(--muted);margin-top:2px;text-align:center;font-weight:400}
+.info-item{margin-top:10px;padding-top:10px;border-top:1px solid #e0e7ed}
+.info-label{display:block;font-size:.8333rem;font-weight:900;letter-spacing:.03em;color:var(--blue)}
+.info-value{display:block;font-size:.9444rem;line-height:1.75;color:var(--ink);margin-top:4px;overflow-wrap:anywhere}
+.info-value a{color:var(--ink);font-weight:400}
+.info-value a:hover{color:var(--blue)}
+.info-inline .info-label{display:inline}
+.info-inline .info-label::after{content:"："}
+.info-inline .info-value{display:inline;margin:0}
+
+main{min-width:0}
+.section{padding:0 0 28px;margin-bottom:36px;border-bottom:1px solid var(--line)}
+.section:last-of-type{border-bottom:0;margin-bottom:14px;padding-bottom:24px}
+.section-heading{display:flex;align-items:baseline;gap:14px;margin-bottom:17px;flex-wrap:wrap}
+.section-number{font:500 .8889rem/1.5 var(--sans);color:#4e6b83}
+.section-heading h2{font-size:1.5556rem;font-weight:700;color:var(--ink);line-height:1.5;letter-spacing:.02em}
+.section-heading .eyebrow{color:var(--muted);font:400 .8333rem/1.6 var(--sans);letter-spacing:.08em}
+.bio p,.direction p,.training-item p,.invitation p{font-size:var(--copy-size);line-height:1.78;text-align:left;overflow-wrap:break-word}
+.bio p+p{margin-top:16px}
+.bio em{font-style:normal;font-weight:400;color:inherit}
+
+.directions{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.direction{display:grid;grid-template-columns:29px minmax(0,1fr);gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.direction:first-child{padding-top:0;border-top:0}
+.direction>div,.record-row>div,.publication>div,.plain-row>div{min-width:0}
+.direction-no{font:500 .8889rem/2.25 var(--sans);color:var(--blue)}
+h3{font-size:1.1667rem;font-weight:600;color:var(--ink);line-height:1.6}
+.direction p{margin-top:6px}
+.direction.focus{margin-top:3px;padding:18px 20px 19px;background:var(--soft);border:0;border-left:3px solid #7595ad;border-radius:5px;grid-template-columns:26px minmax(0,1fr);gap:12px}
+.focus-label{display:inline-block;font-size:.8889rem;font-weight:400;line-height:1.7;color:var(--blue);white-space:nowrap}
+
+.records{list-style:none;padding:0}
+.record-row{display:grid;grid-template-columns:164px minmax(0,1fr);gap:22px;padding:17px 0;border-top:1px solid var(--line)}
+.record-row:first-child{padding-top:0;border:0}
+.record-row:last-child{padding-bottom:0}
+.date{font-size:.8889rem;line-height:1.85;white-space:nowrap;color:var(--muted);padding-top:2px;font-weight:500;font-variant-numeric:tabular-nums}
+.record-top{display:flex;align-items:baseline;justify-content:space-between;gap:9px 13px;flex-wrap:wrap}
+.record-kind{font-size:.9444rem;color:var(--muted);font-weight:400}
+.record-title{font-size:var(--copy-size);line-height:1.7;margin-top:5px;font-weight:500;color:var(--ink)}
+.role{font-size:.8333rem;line-height:1.85;color:var(--blue);white-space:nowrap;background:var(--chip);padding:2px 10px;border-radius:4px;font-weight:600}
+
+.publications{list-style:none;padding:0}
+.publication{display:grid;grid-template-columns:30px minmax(0,1fr);gap:14px;padding:18px 0;border-top:1px solid var(--line)}
+.publication:first-child{padding-top:0;border:0}
+.publication:last-child{padding-bottom:0}
+.pub-index{font:400 .8889rem/2.1 var(--sans);color:#000000}
+.publication h3{font-size:1.0556rem;line-height:1.65;font-weight:500;overflow-wrap:break-word;word-break:normal;color:var(--ink)}
+.authors{font-size:.9444rem;color:var(--muted);line-height:1.7;margin-top:5px}
+.venue{font-size:.9444rem;line-height:1.7;color:var(--blue);margin-top:3px;font-weight:400}
+.venue cite{font-style:italic}
+.pub-meta{color:var(--muted);font-weight:400}
+.pub-tags{margin-top:7px;display:flex;flex-wrap:wrap;gap:8px}
+.pub-tag{font-size:.8333rem;line-height:1.85;color:var(--blue);background:var(--chip);border-radius:4px;padding:2px 10px;font-weight:500;white-space:normal}
+
+.plain-list{list-style:none;padding:0}
+.plain-row{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:17px 0;border-top:1px solid var(--line)}
+.plain-row:first-child{padding-top:0;border:0}
+.plain-row:last-child{padding-bottom:0}
+.plain-row h3{font-size:1.0556rem;font-weight:500;color:var(--ink)}
+.plain-row p{font-size:.9444rem;color:var(--muted);margin-top:4px;overflow-wrap:anywhere;line-height:1.8}
+.patent-number{font-variant-numeric:tabular-nums}
+.status{font-size:.8333rem;line-height:1.85;white-space:nowrap;padding:3px 10px;border-radius:4px;flex:none;font-weight:600}
+.granted{color:#20534d;background:#e7f1ed}
+.pending{color:#68552e;background:#f2eddf}
+
+.training-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:17px}
+.training-item{padding-top:17px;border-top:1px solid var(--line)}
+.training-item:first-child{padding-top:0;border-top:0}
+.training-item h3{font-size:1.1667rem}
+.training-item p{margin-top:6px}
+.invitation{margin-top:24px;padding:20px 22px;background:var(--soft);border-radius:5px}
+.invitation h3{font-size:1.2222rem}
+.invitation p{margin-top:6px}
+.education-title{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;font-weight:600}
+.degree{font-size:1rem;font-weight:400;color:var(--muted);white-space:nowrap}
+footer{border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px 20px;padding:24px 0 32px;color:var(--muted);font-size:.8333rem;flex-wrap:wrap}
+footer a{color:var(--muted);font-weight:600;white-space:nowrap;flex:none}
+
+@media (max-width:1180px){
+  .page{padding:0 32px}
+  h1{font-size:2.6667rem}
+  .layout{grid-template-columns:280px minmax(0,1fr);gap:32px}
+  .directions{grid-template-columns:minmax(0,1fr)}
+  .record-row{grid-template-columns:minmax(0,1fr);gap:7px}
+  .record-top{justify-content:flex-start}
+
+}
+@media (max-width:860px){
+  :root{--copy-size:1.0588rem;--nav-offset:128px}
+  html{font-size:106.25%}
+  .page{padding:0 22px}
+  .masthead{padding:20px 0 14px}
+  .masthead .en{display:none}
+  .hero{padding:30px 0 27px}
+  .name-line{display:block}
+  h1{font-size:2.3529rem}
+  .roman{font-size:1.0588rem;margin-top:5px}
+  .appointment{font-size:1.0588rem;gap:10px}
+  .discipline{font-size:1rem}
+  .navigation{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));justify-content:normal;gap:0 8px;padding:6px 0;overflow:visible;backdrop-filter:none}
+  .navigation a{font-size:.9412rem;line-height:1.55;text-align:center;padding:9px 0 7px;min-width:0}
+  .layout{display:block;padding-top:30px}
+  .profile-card,.profile-card.is-sticky{position:static;max-width:360px;margin:0 auto 38px}
+  .profile-title,.info-value{font-size:1rem}
+  .info-label{font-size:.8824rem}
+  .section{margin-bottom:30px;padding-bottom:24px}
+  .section-heading{gap:11px;margin-bottom:15px}
+  .section-heading h2{font-size:1.4706rem}
+  .section-heading .eyebrow{font-size:.8235rem;letter-spacing:.05em}
+  .direction{grid-template-columns:24px minmax(0,1fr);gap:11px}
+  h3,.training-item h3{font-size:1.1765rem}
+  .direction.focus{padding:16px 14px;grid-template-columns:22px minmax(0,1fr);gap:9px}
+  .invitation{padding:18px 18px}
+
+  .focus-label,.role,.pub-tag,.status{font-size:.8824rem}
+
+  .publication{grid-template-columns:25px minmax(0,1fr);gap:11px}
+  .publication h3,.plain-row h3{font-size:1.0588rem}
+  .authors,.venue,.plain-row p,.record-kind,.date{font-size:.9412rem}
+  .plain-row{display:block}
+  .plain-row .status{display:inline-block;margin-top:10px}
+
+  footer{font-size:.8824rem;align-items:flex-start}
+}
+@media (max-width:380px){
+  .page{padding:0 17px}
+  h1{font-size:2.1765rem}
+  .navigation{gap:0 6px}
+  .section-heading .eyebrow{display:none}
+  .direction.focus{padding:15px 11px;gap:8px}
+  .invitation{padding:17px 16px}
+
+
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{
+  :root{--copy-size:11pt}
+  html{font-size:11pt;scroll-behavior:auto}
+  body{font-size:11pt;background:#fff}
+  .page{max-width:none;padding:0}
+  .masthead,.navigation,.skip-link,footer{display:none}
+  .hero{padding:0 0 18px}
+  .layout{display:block;padding-top:0}
+  .profile-card,.profile-card.is-sticky{position:static;max-width:300px;margin-bottom:20px;box-shadow:none}
+  .profile-card img{max-width:120px}
+  .section{margin-bottom:18px;padding-bottom:18px}
+  .record-row,.publication,.plain-row,.training-item{break-inside:avoid}
+  h2,h3,h4{break-after:avoid}
+}
+
+  </style>
+</head>
+<body id="top">
+  <div class="page">
+    <!-- ==================== Hero ==================== -->
+    <header class="hero">
+      <div class="name-line">
+<h1>温超东</h1>
+<p class="roman" lang="en">Chaodong Wen</p>
+</div>
+      <p class="appointment"><span>讲师</span><span class="sep" aria-hidden="true">/</span><span>理学博士</span><span class="sep" aria-hidden="true">/</span><span>教育技术学</span></p>
+      <p class="discipline">教育数据挖掘 · 学习者情感计算 · 多智能体情感学伴</p>
+    </header>
+
+    <nav class="navigation" aria-label="页面章节">
+      <a href="#intro" aria-current="location">个人简介</a>
+      <a href="#research">研究方向</a>
+      <a href="#projects">科研项目</a>
+      <a href="#pubs">发表论文</a>
+      <a href="#patents">专利成果</a>
+      <a href="#edu">教育背景</a>
+      <a href="#courses">讲授课程</a>
+      <a href="#recruit">学生培养</a>
+    </nav>
+
+    <div class="layout">
+
+      <!-- ==================== 粘性侧栏名片 ==================== -->
+      <aside class="profile-card" aria-label="个人信息">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUEBAQEAwUEBAQGBQUGCA0ICAcHCBALDAkNExAUExIQEhIUFx0ZFBYcFhISGiMaHB4fISEhFBkkJyQgJh0gISD/2wBDAQUGBggHCA8ICA8gFRIVICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCAH+AXIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7LooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooopXAKKKKACiiimAUUUUAFFFFABRRRQAUUUUAFFFFABRRR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" alt="温超东证件照" width="370" height="510">
+        <p class="profile-name">温超东</p>
+        <p class="profile-title">讲师 · 理学博士</p>
+        <div class="info-item">
+          <span class="info-label">工作单位</span>
+          <span class="info-value">河南师范大学<br>教育学部 教育信息技术学院</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">研究方向</span>
+          <span class="info-value">学习者情绪识别<br>学习者情绪原因分析<br>个性化多智能体情感学伴</span>
+        </div>
+        <div class="info-item info-inline">
+          <span class="info-label">办公地点</span>
+          <span class="info-value">T-514</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">联系电话</span>
+          <span class="info-value"><a href="tel:13720151476">13720151476</a></span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">电子邮箱</span>
+          <span class="info-value"><a href="mailto:wenchaodong@htu.edu.cn">wenchaodong@htu.edu.cn</a></span>
+        </div>
+      </aside>
+
+      <!-- ==================== 主内容 ==================== -->
+      <main id="content" tabindex="-1">
+
+        <section class="section" id="intro" aria-labelledby="intro-title">
+          <div class="section-heading">
+<span class="section-number" aria-hidden="true">01</span><h2 id="intro-title">个人简介</h2>
+<p class="eyebrow" lang="en">ABOUT</p>
+</div>
+          <div class="bio">
+            <p>温超东，男，1996年12月生，中共党员，河南师范大学教育学部讲师。2025年毕业于华中师范大学教育技术学专业，获理学博士学位，具有计算机科学与教育学交叉学科背景。主要从事<strong>教育数据挖掘与学习者情感计算</strong>研究，围绕学习过程中的情绪识别与原因分析，探索人工智能支持下的个性化情感支持与干预方法。相关研究成果发表于 <em>IEEE Transactions on Neural Networks and Learning Systems</em>、<em>Information Fusion</em> 等国际期刊，申请、授权国家发明专利2项，担任 <em>Information Processing &amp; Management</em>、<em>Expert Systems</em>、<em>ICME</em>、<em>ICASSP</em> 等国际期刊及会议审稿人。</p>
+          </div>
+        </section>
+
+        <section class="section" id="research" aria-labelledby="research-title">
+          <div class="section-heading">
+<span class="section-number" aria-hidden="true">02</span><h2 id="research-title">研究方向</h2>
+<p class="eyebrow" lang="en">RESEARCH</p>
+</div>
+          <div class="directions">
+<article class="direction"><span class="direction-no" aria-hidden="true">01</span><div>
+<h3>学习者情绪识别</h3>
+<p>面向在线讨论等学习情境，融合文本、语音、表情与行为等多模态数据，研究大语言模型支持的情绪识别与动态分析方法，识别困惑、焦虑、挫败、好奇等情绪，刻画其随学习进程的变化特征，为学习状态感知与适应性支持提供依据。</p>
+</div></article><article class="direction"><span class="direction-no" aria-hidden="true">02</span><div>
+<h3>学习者情绪原因分析</h3>
+<p>结合学习任务、讨论上下文与同伴互动，挖掘情绪变化背后的触发事件与原因线索，研究情绪与原因的关联建模及归因推理方法，为个性化学习支持与情感干预提供可解释依据。</p>
+</div></article><article class="direction focus" id="companion"><span class="direction-no" aria-hidden="true">03</span><div>
+<h3>个性化多智能体情感学伴<span style="font-size:medium; color: #2d5e8b;">（当前重点探索）</span>
+</h3>
+<p>面向在线同步讨论，设计开发多智能体情感学伴，融合文本、语音、表情与行为数据，实时监测学习者情绪变化，结合讨论上下文与互动事件分析情绪产生的原因。通过认知支持、互动引导、情绪调节与可视化反馈等智能体协同，依据原因证据提供个性化支持与干预，并根据反馈动态调整支持策略。</p>
+</div></article>
+</div></section>
+
+        <section class="section" id="projects" aria-labelledby="projects-title">
+          <div class="section-heading">
+<span class="section-number" aria-hidden="true">03</span><h2 id="projects-title">科研项目</h2>
+<p class="eyebrow" lang="en">PROJECTS</p>
+</div>
+          <ol class="records">
+            <li class="record-row">
+<p class="date">2024.06—2025.05</p>
+<div>
+<div class="record-top">
+<p class="record-kind"><strong>中央高校基本科研业务费项目</strong></p>
+<span class="role">主持</span>
+</div>
+<p class="record-title">大语言模型增强的在线学习群体情绪感知归因方法及应用研究</p>
+</div>
+</li>
+            <li class="record-row">
+<p class="date">2024.01—2027.12</p>
+<div>
+<div class="record-top">
+<p class="record-kind"><strong>国家自然科学基金面上项目</strong></p>
+<span class="role">核心参与</span>
+</div>
+<p class="record-title">融合情绪感知与归因推理的异步讨论多策略组合干预方法研究</p>
+</div>
+</li>
+            <li class="record-row">
+<p class="date">2023.03—2026.02</p>
+<div>
+<div class="record-top">
+<p class="record-kind"><strong>国家科技创新 2030 重大项目子课题</strong></p>
+<span class="role">核心参与</span>
+</div>
+<p class="record-title">面向学习成效评价的认知与情感计算模型</p>
+</div>
+</li>
+            <li class="record-row">
+<p class="date">2021.01—2024.12</p>
+<div>
+<div class="record-top">
+<p class="record-kind"><strong>国家自然科学基金面上项目</strong></p>
+<span class="role">核心参与</span>
+</div>
+<p class="record-title">SPOC互动话语中认知行为模式的识别及其适应性干预方法研究</p>
+</div>
+</li>
+          </ol>
+        </section>
+
+        <section class="section" id="pubs" aria-labelledby="pubs-title">
+          <div class="section-heading">
+<span class="section-number" aria-hidden="true">04</span><h2 id="pubs-title">发表论文</h2>
+<p class="eyebrow" lang="en">PUBLICATIONS</p>
+</div>
+          <ol class="publications">
+            <li class="publication" lang="en">
+              <span class="pub-index" aria-hidden="true">[1]</span>
+              <div>
+                <h3>Large language model augmented multi-task learning network with inter-clause modeling for emotion-cause pair extraction</h3>
+                <p class="authors">Liu Z, <strong>Wen C*</strong>, Li D, et al.</p>
+                <p class="venue"><cite>Information Fusion</cite>, <span class="pub-meta">2026, 126: 103583.</span></p>
+                <p class="pub-tags"><span class="pub-tag">SCI一区</span><span class="pub-tag">IF=15.5</span><span class="pub-tag">导师外一作</span></p>
+              </div>
+            </li>
+            <li class="publication" lang="en">
+              <span class="pub-index" aria-hidden="true">[2]</span>
+              <div>
+                <h3>Emotion-semantic-aware dual contrastive learning for epistemic emotion identification of learner-generated reviews in MOOCs</h3>
+                <p class="authors">Liu Z, <strong>Wen C*</strong>, Su Z, et al.</p>
+                <p class="venue"><cite>IEEE Transactions on Neural Networks and Learning Systems</cite>, <span class="pub-meta">2024, 35(11): 16464–16477.</span></p>
+                <p class="pub-tags"><span class="pub-tag">SCI一区</span><span class="pub-tag">IF=8.9</span><span class="pub-tag">导师外一作</span></p>
+              </div>
+            </li>
+            <li class="publication" lang="en">
+              <span class="pub-index" aria-hidden="true">[3]</span>
+              <div>
+                <h3>A Review of Advances in Textual Emotion Cause Analysis</h3>
+                <p class="authors"><strong>Wen C</strong>, Xu W.</p>
+                <p class="venue"><cite>International Conference on Algorithms and Architectures for Parallel Processing</cite>, <span class="pub-meta">Singapore: Springer Nature Singapore, 2026: 327–334.</span></p>
+                <p class="pub-tags"><span class="pub-tag">CCF推荐C类国际会议</span></p>
+              </div>
+            </li>
+            <li class="publication" lang="zh-CN">
+              <span class="pub-index" aria-hidden="true">[4]</span>
+              <div>
+                <h3>结合ALBERT和双向门控循环单元的专利文本分类</h3>
+                <p class="authors"><strong>温超东</strong>，曾诚，任俊伟，等.</p>
+                <p class="venue"><cite>计算机应用</cite>, <span class="pub-meta">2021, 41(2): 407–412.</span></p>
+              </div>
+            </li>
+            <li class="publication" lang="zh-CN">
+              <span class="pub-index" aria-hidden="true">[5]</span>
+              <div>
+                <h3>基于ALBERT-CRNN的弹幕文本情感分析</h3>
+                <p class="authors">曾诚，<strong>温超东</strong>，孙瑜敏，等.</p>
+                <p class="venue"><cite>郑州大学学报（理学版）</cite>, <span class="pub-meta">2021, 53(3): 1–8.</span></p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" id="patents" aria-labelledby="patents-title">
+          <div class="section-heading">
+<span class="section-number" aria-hidden="true">05</span><h2 id="patents-title">专利成果</h2>
+<p class="eyebrow" lang="en">PATENTS</p>
+</div>
+          <ul class="plain-list">
+            <li class="plain-row">
+<div>
+<h3>文本情绪原因对抽取方法、系统、电子设备与存储介质</h3>
+<p>专利号：<span class="patent-number">ZL202410110728.3</span></p>
+</div>
+<span class="status granted">已授权</span>
+</li>
+            <li class="plain-row">
+<div>
+<h3>一种大语言模型增强的对话因果情绪蕴含方法及系统</h3>
+<p>专利号：<span class="patent-number">ZL202511701037.1</span></p>
+</div>
+<span class="status pending">受理</span>
+</li>
+          </ul>
+        </section>
+
+        <section class="section" id="edu" aria-labelledby="edu-title">
+          <div class="section-heading">
+<span class="section-number" aria-hidden="true">06</span><h2 id="edu-title">教育背景</h2>
+<p class="eyebrow" lang="en">EDUCATION</p>
+</div>
+          <ol class="records">
+            <li class="record-row">
+<p class="date">2021年—2025年</p>
+<div>
+<div class="record-top"><p class="record-kind">华中师范大学 · 教育大数据应用技术国家工程研究中心</p></div>
+<p class="record-title education-title">教育技术学 <span class="degree"><strong>博士</strong></span></p>
+</div>
+</li>
+            <li class="record-row">
+<p class="date">2018年—2021年</p>
+<div>
+<div class="record-top"><p class="record-kind">湖北大学 · 计算机与信息工程学院</p></div>
+<p class="record-title education-title">计算机技术 <span class="degree"><strong>硕士</strong></span></p>
+</div>
+</li>
+          </ol>
+        </section>
+
+        <section class="section" id="courses" aria-labelledby="courses-title">
+          <div class="section-heading">
+<span class="section-number" aria-hidden="true">07</span><h2 id="courses-title">讲授课程</h2>
+<p class="eyebrow" lang="en">TEACHING</p>
+</div>
+          <ul class="plain-list">
+            <li class="plain-row"><div>
+<span style="font-size: larger;">中小学信息技术教育前沿专题&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    <span style="font-size: large; color: #0a4780;">硕士</span>
+
+</div></li>
+
+
+            <li class="plain-row"><div>
+<span style="font-size: larger;">人工智能教育应用&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    <span style="font-size: large; color: #0a4780;">硕士</span>
+
+</div></li>
+            <li class="plain-row">
+<div>
+
+<span style="font-size: larger;">人工智能导论A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>    <span style="font-size: large; color: #0a4780;">本科，公共必修课</span>
+
+</div>
+<span class="status pending">拟开课</span>
+</li>
+          </ul>
+        </section>
+
+        <section class="section" id="recruit" aria-labelledby="recruit-title">
+          <div class="section-heading">
+<span class="section-number" aria-hidden="true">08</span><h2 id="recruit-title">学生培养</h2>
+<p class="eyebrow" lang="en">JOIN THE TEAM</p>
+</div>
+          <div class="training-grid">
+            <article class="training-item"><h3>科学研究与论文撰写</h3>
+<p>聚焦学习者情感计算，在教师指导下，从文献阅读与研究方法学习入手，逐步参与研究设计、数据分析和论文撰写，形成规范的研究习惯，提升学术表达能力。</p></article>
+            <article class="training-item"><h3>项目实践与学科竞赛</h3>
+<p>围绕个性化多智能体情感学伴的设计与开发，根据学生兴趣和基础，安排数据标注、模型实验、智能体设计、系统开发和应用评价等任务。结合项目进展，由教师指导学生组队参加“挑战杯”全国大学生课外学术科技作品竞赛、中国国际大学生创新大赛等赛事，开展作品打磨与路演训练，提升创新实践与团队协作能力。</p></article>
+            <article class="training-item"><h3>学业规划与升学准备（本科生）</h3>
+<p>在扎实完成课程学习的基础上，结合个人目标开展升学规划，梳理科研与项目经历，锻炼学术汇报和面试表达能力，为保研推免、考研及研究生阶段的学习做好准备。</p></article>
+          </div>
+          <div class="invitation">
+            <h3>欢迎加入</h3>
+            <p>欢迎对人工智能、教育数据挖掘或情感计算感兴趣的同学加入。联系时，可简要介绍自己的专业、年级、兴趣方向与已有基础，以便共同确定适合的学习与实践任务。</p>
+            </div>
+        </section>
+
+      </main>
     </div>
+
+    <footer>
+      <p>© 2026 温超东 ｜ 最近更新：2026 年 9 月</p>
+      <a href="#top">返回顶部 ↑</a>
+    </footer>
   </div>
 
-  <!-- ===================== 个人简介 ===================== -->
-  <h2 id="intro"><span class="icon">❖</span>个人简介</h2>
-  <p class="intro">
-    温超东，华中师范大学教育技术学博士，毕业于教育大数据应用技术国家工程研究中心，具备计算机科学与教育学的交叉学科背景。
-    主要从事<b>学习者情绪识别</b>、<b>学习者情绪原因分析</b>等方向的研究，擅长运用人工智能技术解决教育领域中的学习情感分析与认知计算问题。
-    相关成果发表于 <i>IEEE Transactions on Neural Networks and Learning Systems</i>、<i>Information Fusion</i>、
-    <i>Information Processing &amp; Management</i> 等国际期刊（含 ESI 高被引论文），获授权国家发明专利 1 项。
-  </p>
-  <p class="intro">
-    主持华中师范大学优秀研究生教育创新资助项目 1 项，作为学生第一参与人深度参与国家自然科学基金面上项目、
-    国家科技创新 2030—“新一代人工智能”重大项目子课题，全程参与项目申报、实施与结题工作。
-    担任 <i>Information Processing &amp; Management</i>、<i>Expert Systems</i> 等国际期刊审稿人。
-    曾获华中师范大学“科研之星”（2023、2024）、优秀研究生单项奖学金等荣誉。
-  </p>
+  <script>
+(() => {
+  const links = Array.from(document.querySelectorAll('.navigation a'));
+  const sections = links.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+  const navigation = document.querySelector('.navigation');
+  const profile = document.querySelector('.profile-card');
+  if (!sections.length || !navigation) return;
+  let scheduled = false;
+  let sectionThreshold = 120;
 
-  <!-- ===================== 教育背景 ===================== -->
-  <h2 id="edu"><span class="icon">🎓</span>教育背景</h2>
-  <ul class="list">
-    <li><span class="date">2021.09–2025.12</span>华中师范大学，教育技术学，<span class="role">博士</span>（导师：刘智 教授），教育大数据应用技术国家工程研究中心</li>
-    <li><span class="date">2018.09–2021.06</span>湖北大学，计算机技术，<span class="role">硕士</span>（导师：曾诚 教授），计算机与信息工程学院</li>
-    <li><span class="date">2013.09–2017.06</span>湖北汽车工业学院，车辆工程，<span class="role">学士</span>，汽车工程学院</li>
-  </ul>
+  function refresh() {
+    let active = sections[0];
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= sectionThreshold) active = section;
+    }
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 10) {
+      active = sections[sections.length - 1];
+    }
+    for (const link of links) {
+      if (link.getAttribute('href') === '#' + active.id) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    }
+    scheduled = false;
+  }
 
-  <!-- ===================== 研究方向 ===================== -->
-  <h2 id="research"><span class="icon">◎</span>研究方向</h2>
-  <ul class="list">
-    <li><span class="role">学习者情绪识别：</span>面向在线学习场景，融合大语言模型与对比学习等技术，精准识别学习者在讨论、评论等文本中表达的困惑、兴奋、挫败等认知型情绪。</li>
-    <li><span class="role">学习者情绪原因分析：</span>挖掘情绪背后的触发原因，构建“情绪—原因”关联抽取与归因推理模型，回答“学习者为何产生该情绪”这一关键问题，为精准教学干预提供可解释依据。</li>
-  </ul>
+  function updateLayout() {
+    const offset = Math.ceil(navigation.getBoundingClientRect().height + 24);
+    document.documentElement.style.setProperty('--nav-offset', offset + 'px');
+    sectionThreshold = offset + 12;
+    if (profile) {
+      const fits = window.innerWidth > 860 && profile.offsetHeight + offset + 24 <= window.innerHeight;
+      profile.classList.toggle('is-sticky', fits);
+    }
+    refresh();
+  }
 
-  <!-- ===================== 在研项目 ===================== -->
-  <h2 id="companion"><span class="icon">🤖</span>在研项目：个性化多智能体情感学伴</h2>
-  <p class="intro">
-    本项目旨在开发一个<b>“情感学习同伴”</b>智能系统，陪伴学习者完成在线协作学习：
-    在在线同步讨论过程中<b>实时监测学习者的情绪状态</b>，结合讨论上下文<b>自动发现其情绪产生的原因</b>，
-    并基于多智能体协同机制，依据情绪原因为学习者提供<b>个性化的情感支持与干预</b>，从而激发学习动机、改善学习体验。
-  </p>
+  window.addEventListener('scroll', () => {
+    if (!scheduled) { scheduled = true; requestAnimationFrame(refresh); }
+  }, { passive: true });
+  window.addEventListener('resize', updateLayout, { passive: true });
+  const portrait = profile && profile.querySelector('img');
+  if (portrait) portrait.addEventListener('load', updateLayout, { once: true });
+  if (document.fonts) document.fonts.ready.then(updateLayout);
+  updateLayout();
+})();
 
-  <!-- ===================== 科研项目 ===================== -->
-  <h2 id="projects"><span class="icon">▣</span>科研项目</h2>
-  <ul class="list">
-    <li><span class="date">2024.06–2025.05</span>华中师范大学优秀研究生教育创新资助项目：大语言模型增强的在线学习群体情绪感知归因方法及应用研究，<span class="role">主持</span></li>
-    <li><span class="date">2024.01–2027.12</span>国家自然科学基金面上项目：融合情绪感知与归因推理的异步讨论多策略组合干预方法研究，<span class="role">学生第一参与人</span></li>
-    <li><span class="date">2023.03–2026.02</span>国家科技创新 2030—“新一代人工智能”重大项目子课题：基于认知和情感计算模型的学习成效评估与预测，<span class="role">学生第一参与人</span></li>
-    <li><span class="date">2021.01–2024.12</span>国家自然科学基金面上项目：SPOC 互动话语中认知行为模式的识别及其适应性干预方法研究，<span class="role">核心参与</span></li>
-  </ul>
-
-  <!-- ===================== 代表论文 ===================== -->
-  <h2 id="pubs"><span class="icon">✎</span>代表论文</h2>
-  <ol class="pubs">
-    <li>Liu Z, <span class="me">Wen C*</span>, Su Z, et al. Emotion-semantic-aware dual contrastive learning for epistemic emotion identification of learner-generated reviews in MOOCs. <span class="venue">IEEE Transactions on Neural Networks and Learning Systems</span>, 2024, 35(11): 16464–16477. <span class="tag">（中科院一区，IF=8.9，ESI 高被引）</span></li>
-    <li>Liu Z, <span class="me">Wen C*</span>, Li D, et al. Large language model augmented multi-task learning network with inter-clause modeling for emotion-cause pair extraction. <span class="venue">Information Fusion</span>, 2026, 126: 103583. <span class="tag">（中科院一区，IF=15.5）</span></li>
-    <li><span class="me">Wen C</span>, Liu Z, Xu W, et al. LLM-KSC: Large language model-enhanced knowledge-structure complementary network for causal emotion entailment in conversations. <span class="venue">Information Processing &amp; Management</span>. <span class="tag">（中科院一区，在审）</span></li>
-    <li><span class="me">Wen C</span>, Xu W. A Review of Advances in Textual Emotion Cause Analysis. <span class="venue">International Conference on Algorithms and Architectures for Parallel Processing (ICA3PP)</span>, 2026: 327–334. <span class="tag">（CCF C 类会议）</span></li>
-    <li><span class="me">温超东</span>, 曾诚, 任俊伟, 等. 结合 ALBERT 和双向门控循环单元的专利文本分类. <span class="venue">计算机应用</span>, 2021, 41(2): 407–412. <span class="tag">（北大核心）</span></li>
-    <li>曾诚, <span class="me">温超东</span>, 孙瑜敏, 等. 基于 ALBERT-CRNN 的弹幕文本情感分析. <span class="venue">郑州大学学报（理学版）</span>, 2021, 53(3): 1–8. <span class="tag">（北大核心）</span></li>
-    <li>Liu Z, Xiang H, Liang R, et al. Graph Contrastive Learning via Hierarchical Multiview Enhancement for Recommendation. <span class="venue">IEEE Transactions on Industrial Informatics</span>, 2025, 21(3): 2403–2412. <span class="tag">（中科院一区）</span></li>
-    <li>Xu W, Zhu K, Zhou D, et al. Examining the Effects of Habit and Self-Efficacy on Users' Acceptance of a Map-Based Online Learning System via an Extended TAM. <span class="venue">Education Sciences</span>, 2025, 15(7): 828. <span class="tag">（中科院三区）</span></li>
-  </ol>
-
-  <!-- ===================== 发明专利 ===================== -->
-  <h2 id="patents"><span class="icon">⚙</span>发明专利</h2>
-  <ol class="pubs">
-    <li>刘智，<span class="me">温超东</span>，孙建文，刘三女牙，戴志诚，邓磊. 文本情绪原因对抽取方法、系统、电子设备与存储介质. ZL202410110728.3, 2024. <span class="tag">（已授权）</span></li>
-    <li>曾诚，<span class="me">温超东</span>，任俊伟，等. 一种结合 ALBERT 和 BiGRU 的专利文本分类方法. ZL202010497459.2, 2020. <span class="tag">（受理）</span></li>
-    <li>刘智，汪元，孙建文，刘三女牙，向恒京，粟柱，<span class="me">温超东</span>. 一种基于多层次增强对比学习的慕课学习者学习成效预测方法. ZL202410337219.4, 2024. <span class="tag">（受理）</span></li>
-  </ol>
-
-  <!-- ===================== 荣誉奖励 ===================== -->
-  <h2 id="awards"><span class="icon">🏆</span>荣誉奖励</h2>
-  <ul class="list">
-    <li><span class="date">2023 / 2024</span>华中师范大学“科研之星”</li>
-    <li><span class="date">2024</span>华中师范大学二等学业奖学金</li>
-    <li><span class="date">2023</span>华中师范大学优秀研究生单项奖学金</li>
-    <li><span class="date">2021</span>湖北大学优秀毕业研究生</li>
-  </ul>
-
-  <!-- ===================== 学生培养（本科生招生） ===================== -->
-  <h2 id="recruit"><span class="icon">❀</span>学生培养：本科生科研团队招生</h2>
-  <p class="intro"><b>加入团队，你将获得：</b></p>
-  <ul class="list">
-    <li><span class="role">学科竞赛：</span>老师亲自带队参加“挑战杯”“互联网+”等高水平实践创新竞赛，全程指导选题、打磨与路演；</li>
-    <li><span class="role">论文训练：</span>前期即可跟随老师参与学术论文写作，接受从文献调研、实验设计到投稿的完整科研训练，早出成果；</li>
-    <li><span class="role">助力保研：</span>以竞赛获奖与论文成果为依托，提前规划、尽早准备，为推免保研增添核心竞争力；</li>
-    <li><span class="role">项目实战：</span>直接参与“情感学伴”等真实科研项目，动手实践大语言模型、情感计算等前沿人工智能技术。</li>
-  </ul>
-  <p class="intro"><b>我们期待这样的你：</b>对人工智能、教育数据挖掘或情感计算有浓厚兴趣；踏实主动，愿意投入时间学习编程（Python）与科研方法；专业不限，计算机、教育技术及相关专业同学优先，零基础但肯学者同样欢迎。</p>
-  <p class="intro"><b>联系方式：</b>欢迎感兴趣的同学通过邮箱 <a href="mailto:944359632@qq.com">944359632@qq.com</a> 或电话 13720151476 与我联系，期待与你一起探索“读懂学习者情绪”的智能教育未来！</p>
-
-  <div class="footer">© 2026 温超东 · 最近更新：2026 年 9 月</div>
-</div>
+  </script>
 </body>
 </html>
